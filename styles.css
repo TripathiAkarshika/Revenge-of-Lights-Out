@@ -1,0 +1,217 @@
+/* Add a cute background with metallic shine animation */
+body {
+    font-family: 'BodyFont', Arial, sans-serif;
+    /* Applied font file as primary */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #d9c3d0, #a4869b, #e4d2e1, #8f5f7f);
+    background-size: 400% 400%;
+    /* for animation */
+    animation: metallic-shine 8s ease infinite;
+    /* Metallic shine animation */
+    color: #fff;
+}
+
+/* Add font-face */
+@font-face {
+    font-family: 'Title';
+    src: url('fonts/NeonLights-22d.woff2') format('woff2'),
+        /* Path to font file */
+        url('fonts/NeonLights-22d.woff') format('woff');
+    /* Path to font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Add font-face */
+@font-face {
+    font-family: 'Headings';
+    src: url('fonts/SuperShiny.woff2') format('woff2'),
+        /* Path to font file */
+        url('fonts/SuperShiny.woff') format('woff');
+    /* Path to font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Add font-face */
+@font-face {
+    font-family: 'BodyFont';
+    src: url('fonts/Marbley.woff2') format('woff2'),
+        /* Path to font file */
+        url('fonts/Marbley.woff') format('woff');
+    /* Path to font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Animated title for the h1 */
+h1 {
+    margin: 40px 0;
+    animation: pulseAnimation 2s ease-in-out infinite;
+    /* Pulse animation */
+    font-family: 'Title', Arial, sans-serif;
+    /* Applied font face */
+    font-size: 48px;
+    /* Title Size */
+}
+
+/* Adding some glow effects to the game board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Square styles with glowing effect on hover */
+.square {
+    width: 60px;
+    height: 60px;
+    background-color: #fcfcfc;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.square.is-off {
+    background-color: #212121;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.square:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 15px #f1c40f;
+}
+
+/* Button animation */
+#new-game-button {
+    margin: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #50a95d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#new-game-button:hover {
+    background-color: #016a4e;
+    transform: scale(1.1);
+}
+
+/* Footer styles */
+footer {
+    font-family: Arial, sans-serif;
+    /* Applied normal font for footer */
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+/* Keyframe animation for the metallic shine effect */
+@keyframes metallic-shine {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Keyframe animation for the pulse effect */
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+        color: #fff;
+        text-shadow: 0 0 5px #ff6347, 0 0 10px #ff6347, 0 0 15px #ff6347;
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: #a514ff;
+        /* Pink */
+        text-shadow: 0 0 10px #e2b2ff, 0 0 20px #d99cff, 0 0 30px #c76dfe;
+        opacity: 0.8;
+    }
+}
+
+/* Styling for the Addendum Section */
+#addendum {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    max-width: 1200px;
+    color: #333;
+    text-align: left;
+    font-family: 'Arial', sans-serif;
+}
+
+#addendum h2 {
+    font-family: 'Headings', Arial, sans-serif;
+    color: #333;
+    margin-bottom: 5px;
+    font-size: 32px;
+}
+
+#addendum h3 {
+    font-family: 'Headings', Arial, sans-serif;
+    color: #8f5f7f;
+    margin-bottom: 2px;
+    font-size: 26px;
+}
+
+#addendum ul {
+    font-family: 'BodyFont', Arial, sans-serif;
+    margin-left: 30px;
+    list-style-type: disc;
+    font-size: 18px;
+}
+
+#addendum p {
+    font-family: 'BodyFont', Arial, sans-serif;
+    line-height: 1.2;
+    margin-top: 0;
+    /* Remove top margin */
+    margin-bottom: 2px;
+    /* Remove bottom margin */
+    padding: 2px;
+    font-size: 18px;
+}
+
+#addendum code {
+    font-family: 'Courier New', monospace;
+    background-color: #eee;
+    padding: 3px 7px;
+    border-radius: 4px;
+}
+
+#game-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Centers items vertically */
+    width: 180px;
+    height: 30px;
+    /* Set height */
+    margin: 10px auto;
+    padding: 15px;
+    background: #8f5f7f;
+    color: #fff;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}

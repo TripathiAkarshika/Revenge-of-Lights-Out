@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revenge of Lights Out !!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Revenge of Lights Out !!</h1>
+    <div id="game-board"></div>
+    <div id="game-info">
+        <p>Time: <span id="timer">0</span> </p>
+        <p>Moves: <span id="move-counter">0</span></p>
+    </div>
+    <button id="new-game-button">New Game</button>
+    <section id="addendum">
+        <h2>Addendum</h2>
+        <h3>Process:</h3>
+        <p>I preferred CSS class manipulation rather than using inline styles to ma
+            nipulate the states of squares using JavaScript. This separation of concerns, relat
+            ing to logic and design, facilitated better code clarity.</p>
+        <p>Creating a random board that would be solvable. Rather than using automa
+            ted positioning, I chose to use click placebo to swap individual blocks and their n
+            eighbors so that the board formed at the start of the game was solvable and easy fo
+            r the user.</p>
+        <h3>Creative Choices:</h3>
+        <ul>
+            <li><strong>Game Board Design:</strong> Used CSS Grid for flexible squa
+                re alignment, scalable to any size.</li>
+            <li><strong>Aesthetic Choices:</strong> Chose a pink–purple–neutral gra
+                dient to make it as comfy as possible.</li>
+            <li><strong>Metallic Shine:</strong> Improved gradient animation with a
+                soft, sophisticated shine.</li>
+            <li><strong>Title Animation:</strong> Used pulse effect and text-shadow
+                to add depth and emphasis.</li>
+            <li>Developed glowing squares and hover effects for better engagement o
+                n the site.</li>
+        </ul>
+        <h3>Challenges and Solutions:</h3>
+        <p>Installed an actual shuffle algorithm by commenting out squares that wou
+            ld lead to a solvable state, instead of setting them over Board.load() using the si
+            mulateClicks() method.</p>
+        <p>Split functionality and design by using JavaScript for game logic and CS
+            S for styling, making it easier to add new features or changes in the future.</p>
+        <h3>Insights Gained:</h3>
+        <p>Understood that it’s better to divide the project into significant segme
+            nts or modules so that modifications to the game’s rules or design don’t impact oth
+            ers.</p>
+        <p>Learned how to emulate clicks to make functionality work without excessi
+            ve logical complexity.</p>
+        <h3>Serving the Font:</h3>
+        <p>I applied the NeonLights font for the title, SuperShiny for the addendum
+            headings, and Marbley font for the addendum text. I used the <code>@font-face</code> process to serve the
+            fonts, uploaded the font files to the server to ensure they
+            load correctly on all devices.</p>
+    </section>
+    <footer>
+        <p>Last updated:
+            <span id="lastModified"></span>
+        </p>
+    </footer>
+    <script>
+        var x = document.lastModified;
+        document.getElementById('lastModified').textContent = x;
+    </script>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
